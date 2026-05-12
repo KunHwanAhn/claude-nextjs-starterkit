@@ -1,103 +1,102 @@
-import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, Layers, Moon, Palette, Zap } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
+
+const TECH_STACK = [
+  "Next.js 15",
+  "TypeScript",
+  "TailwindCSS v4",
+  "shadcn/ui",
+  "lucide-react",
+];
+
+const FEATURES = [
+  {
+    icon: Zap,
+    title: "Next.js 15 App Router",
+    description: "React Server Components, Turbopack 기반의 빠른 개발 환경",
+  },
+  {
+    icon: Palette,
+    title: "TailwindCSS v4",
+    description: "CSS 기반 설정, tailwind.config 없는 깔끔한 구성",
+  },
+  {
+    icon: Layers,
+    title: "shadcn/ui",
+    description: "15개 핵심 컴포넌트 사전 설치, 필요한 것만 추가",
+  },
+  {
+    icon: Moon,
+    title: "다크 모드",
+    description: "next-themes 기반 시스템/라이트/다크 모드 지원",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="mx-auto max-w-5xl px-4 py-16">
+      {/* Hero */}
+      <section className="flex flex-col items-center text-center">
+        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+          Next.js Starter Kit
+        </h1>
+        <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
+          웹 개발을 바르게 시작할 수 있는 스타터킷.
+          <br />
+          검증된 기술스택으로 즉시 개발에 착수하세요.
+        </p>
+        <div className="mt-6 flex flex-wrap justify-center gap-2">
+          {TECH_STACK.map((tech) => (
+            <Badge key={tech} variant="secondary">
+              {tech}
+            </Badge>
+          ))}
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <div className="mt-8 flex gap-3">
+          <Link href="/examples">
+            <Button size="lg">
+              컴포넌트 둘러보기
+              <ArrowRight data-icon="inline-end" className="size-4" />
+            </Button>
+          </Link>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section className="mt-20 grid gap-4 sm:grid-cols-2">
+        {FEATURES.map((feature) => (
+          <Card key={feature.title}>
+            <CardHeader>
+              <div className="mb-2 flex size-10 items-center justify-center rounded-lg bg-primary/10">
+                <feature.icon className="size-5 text-primary" />
+              </div>
+              <CardTitle>{feature.title}</CardTitle>
+              <CardDescription>{feature.description}</CardDescription>
+            </CardHeader>
+          </Card>
+        ))}
+      </section>
+
+      {/* Quick Start */}
+      <section className="mt-20 flex flex-col items-center text-center">
+        <h2 className="text-2xl font-bold">빠른 시작</h2>
+        <div className="mt-6 w-full max-w-lg rounded-lg border bg-muted/50 p-4 text-left">
+          <pre className="overflow-x-auto text-sm">
+            <code>{`git clone <repository-url>
+cd claude-nextjs-starterkit
+npm install
+npm run dev`}</code>
+          </pre>
+        </div>
+      </section>
     </div>
   );
 }
