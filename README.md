@@ -73,6 +73,30 @@ npx shadcn@latest add [component-name]
 
 테마 색상은 `src/app/globals.css`의 `:root`와 `.dark` 블록에서 수정할 수 있습니다.
 
+## MCP 서버 설정 (Claude Code)
+
+이 프로젝트는 [Claude Code](https://docs.anthropic.com/en/docs/claude-code)에서 활용할 수 있는 MCP(Model Context Protocol) 서버 설정을 지원합니다.
+
+### 설정 방법
+
+1. `.mcp.json.example`을 복사하여 `.mcp.json`을 생성합니다:
+
+```bash
+cp .mcp.json.example .mcp.json
+```
+
+2. `.mcp.json`을 열어 각 MCP 서버에 필요한 API 키를 입력합니다.
+
+### 포함된 MCP 서버
+
+| 서버 | 용도 |
+|------|------|
+| [Context7](https://context7.com) | 라이브러리/프레임워크의 최신 문서를 실시간으로 조회 |
+| [Playwright](https://github.com/microsoft/playwright-mcp) | 브라우저 자동화를 통한 UI 테스트 및 스크린샷 |
+| [Sequential Thinking](https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking) | 복잡한 문제를 단계별로 분석하여 사고 과정을 구조화 |
+
+> **주의:** `.mcp.json`은 API 키를 포함할 수 있으므로 `.gitignore`에 등록되어 있습니다. 절대 커밋하지 마세요.
+
 ## 코딩 컨벤션
 
 - 변수/함수: `camelCase`
