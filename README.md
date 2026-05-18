@@ -94,6 +94,8 @@ cp .mcp.json.example .mcp.json
 | [Context7](https://context7.com) | 라이브러리/프레임워크의 최신 문서를 실시간으로 조회 |
 | [Playwright](https://github.com/microsoft/playwright-mcp) | 브라우저 자동화를 통한 UI 테스트 및 스크린샷 |
 | [Sequential Thinking](https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking) | 복잡한 문제를 단계별로 분석하여 사고 과정을 구조화 |
+| [Shrimp Task Manager](https://github.com/cjo4m06/mcp-shrimp-task-manager) | 복잡한 작업을 체계적으로 분석, 계획, 실행하는 태스크 관리 |
+| [shadcn MCP](https://ui.shadcn.com/docs/cli#mcp) | shadcn/ui 컴포넌트 검색, 조회, 설치 지원 |
 
 > **주의:** `.mcp.json`은 API 키를 포함할 수 있으므로 `.gitignore`에 등록되어 있습니다. 절대 커밋하지 마세요.
 
